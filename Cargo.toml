@@ -1,0 +1,18 @@
+[package]
+name = "ntoskrnl-offsets"
+version = "1.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.6.0"
+
+[profile.release]
+strip = true
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[profile.release.package."*"]
+opt-level = 3
